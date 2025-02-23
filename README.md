@@ -79,3 +79,6 @@ print("Portfolio Risk (Standard Deviation):", portfolio_std_dev)
 3. **Static Model:** MPT does not account for dynamic changes in market conditions.
 
 ---
+
+
+
