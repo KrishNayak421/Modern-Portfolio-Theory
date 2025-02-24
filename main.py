@@ -4,7 +4,7 @@ import yfinance as yf
 import datetime as dt
 import scipy.optimize as sco
 import plotly.graph_objects as go
-
+  
 # Fetch stock data and calculate returns
 def get_data(stocks, start, end):
     stock_data = yf.download(stocks, start=start, end=end, auto_adjust=True)['Close']
@@ -187,7 +187,7 @@ def plot_efficient_frontier(mean_returns, cov_matrix):
 
 # Example usage
 if __name__ == "__main__":
-    stock_list = ['HDFCBANK.NS', 'INFY.NS', 'RELIANCE.NS']
+    stock_list = ['HDFCBANK.NS', 'INFY.NS', 'RELIANCE.NS'],
     end_date = dt.datetime.now()
     start_date = end_date - dt.timedelta(days=365)
     
