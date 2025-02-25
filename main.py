@@ -240,20 +240,19 @@ def plot_efficient_frontier(mean_returns, cov_matrix):
 # Example usage
 if __name__ == "__main__":
     stock_list = [
-        "HDFCBANK.NS",
-        "INFY.NS",
-        "BAJFINANCE.NS",
-        "INDUSINDBK.NS",
-        "BALRAMCHIN.NS",
-        "INDUSTOWER.NS",
-        "BANKBEES.NS",  
-        "CPSEETF.NS",   
-        "BANKETF.NS",    
-        "SETFNIF50.NS", 
-        "NIFTYBEES.NS" 
-    ]
+    "HDFCBANK.NS",      
+    "INFY.NS",              
+    "INDUSINDBK.NS",     
+    "BALRAMCHIN.NS",     
+    "JSWSTEEL.NS",     
+    "CIPLA.NS",          
+    "KPIGREEN.NS",      
+    "DHANUKA.NS",
+    "TATAMOTORS.NS",        
+]
+
     end_date = dt.datetime.now()
-    start_date = end_date - dt.timedelta(days=1825)  # 5 years of data
+    start_date = end_date - dt.timedelta(days=1095)  # 5 years of data
     
     mean_returns, cov_matrix = get_data(stock_list, start_date, end_date)
     sr_ret, sr_vol, sr_alloc, mv_ret, mv_vol, mv_alloc, ef_vols, target_rets = calculate_results(mean_returns, cov_matrix)
