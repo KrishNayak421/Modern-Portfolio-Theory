@@ -6,7 +6,7 @@ import scipy.optimize as sco
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from scipy.interpolate import interp1d
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt    
 
 # Fetch stock data and calculate returns
 def get_data(stocks, start, end):
