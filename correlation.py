@@ -15,11 +15,11 @@ def plot_correlation_heatmap(data):
     """
     Computes daily returns, calculates the correlation matrix, and plots a heatmap.
     """
-    # Calculate daily returns and drop the first row with NaNs
+    # Calculate daily returns 
     returns = data.pct_change().dropna()
     corr_matrix = returns.corr()
 
-    # Plot the heatmap using seaborn
+    # heatmap
     plt.figure(figsize=(10, 8))
     sns.heatmap(corr_matrix, annot=True, cmap="Blues", fmt=".2f", linewidths=0.5)
     plt.title("Stock Returns Correlation Matrix")
@@ -38,11 +38,10 @@ def main():
         "DHANBANK.NS",
     ]
     
-    # Define the date range (last 5 years)
+    # date range (5 yrs)
     end_date = dt.datetime.now()
     start_date = end_date - dt.timedelta(days=365*5)
     
-    # Download data and plot the correlation heatmap
     data = download_data(tickers, start_date, end_date)
     plot_correlation_heatmap(data)
 
