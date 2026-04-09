@@ -7,7 +7,6 @@ It fetches market data from Yahoo Finance, computes return and risk statistics, 
 portfolio weights, and visualizes results.
 
 The codebase focuses on:
-
 - understanding return-risk tradeoffs,
 - finding optimal portfolios under constraints,
 - comparing assets through return and correlation analysis,
