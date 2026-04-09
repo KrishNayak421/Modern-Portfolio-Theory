@@ -256,7 +256,13 @@ def plot_efficient_frontier(daily_returns, mean_returns, cov_matrix, MAR, risk_f
         height=800,
         template='plotly_white'
     )
-    
+    # Save a static PNG of the chart (requires the 'kaleido' package)
+    try:
+        fig.write_image("2 Yr data (12 stock) final.png", scale=2)
+    except Exception as e:
+        # If kaleido is missing or any error occurs, we still show the interactive figure
+        print(f"Warning: Could not save PNG automatically: {e}")
+
     fig.show()
 
 # Example usage
@@ -265,7 +271,6 @@ if __name__ == "__main__":
         "HDFCBANK.NS",
         "INFY.NS",
         "BAJFINANCE.NS",
-        "INDUSINDBK.NS",
         "BALRAMCHIN.NS",
         "INDUSTOWER.NS",
         "CIPLA.NS",
@@ -275,7 +280,7 @@ if __name__ == "__main__":
         "NIFTYBEES.NS",
         "CPSEETF.NS"
     ]
-    
+   
     end_date = dt.datetime.now()
     start_date = end_date - dt.timedelta(days=730)  # Approximately 2 years of data
     
